@@ -23,7 +23,7 @@ class DebugMode {
 			window.lightdm = {
 				is_authenticated: false,
 				authentication_user: null,
-				default_session: 'awesome',
+				default_session: 'tde',
 				can_suspend: true,
 				can_hibernate: true,
 				can_shutdown: true,
@@ -32,6 +32,10 @@ class DebugMode {
 					{
 						name: 'awesome wm',
 						key: 'awesome'
+					},
+					{
+						name: 'TDE',
+						key: 'tde'
 					},
 					{
 						name: 'bspwm',
