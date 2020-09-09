@@ -1,0 +1,6 @@
+[theme]
+name=tde
+description=default lightdm theme for tde
+engine=lightdm-webkit2-greeter
+url=index.html
+session=tde
