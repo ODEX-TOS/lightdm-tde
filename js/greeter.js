@@ -21,7 +21,7 @@ class GreeterScreen {
     this._arrowIndicatorGreeter.addEventListener("click", () => {
       this._hideGreeter();
     });
-    document.body.addEventListener("keyup", function (e) {
+    document.body.addEventListener("keyup", (e) => {
       if (e.keyCode == 13) {
         this._hideGreeter();
       }
