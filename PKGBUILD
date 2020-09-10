@@ -1,7 +1,7 @@
 # Maintainer: Gerome Matilla <gerome.matilla07@gmail.com | gmail>
 
 pkgname=tde-greeter
-pkgver=1.0.0
+pkgver=1.1.0
 pkgrel=1
 pkgdesc="a sleek, modern and lightdm theme for TDE"
 arch=('any')
