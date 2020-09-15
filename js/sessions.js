@@ -33,9 +33,17 @@ class Sessions {
 	_setSessionListDefaultOnStartUp() {
 		this._defaultSession = this._localStorage.getItem('defaultSession') ||
 			this._sessionsObject[0].key || lightdm.default_session;
-		const defaultSessionItem = document.querySelector(`#button-sessions-item-${this._defaultSession}`);
+		let defaultSessionItem = document.querySelector(`#button-sessions-item-${this._defaultSession}`);
+		
+		if(! defaultSessionItem){
+			this._defaultSession = "tde";
+			defaultSessionItem = document.querySelector(`#button-sessions-item-${this._defaultSession}`);
+		}
+
+
 		this._updateSessionItemDefault(defaultSessionItem);
 		this._updateMainScreenButtonUIs(this._defaultSession);
+
 	}
 
 	_sessionItemOnClickEvent(button, key) {

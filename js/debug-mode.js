@@ -8,7 +8,7 @@ class DebugMode {
 		if (!window.config) {
 			window.config = {};
 			window.config.get_str = function() {
-				return '/usr/share/lightdm-webkit/themes/lightdm-webkit2-theme-glorious/assets/';
+				return '/usr/share/lightdm-webkit/themes/tde/assets/';
 			};
 		}
 
