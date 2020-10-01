@@ -1,52 +1,55 @@
 class GreeterScreen {
-  constructor() {
-    this._screenGreeter = document.querySelector("#screen-greeter");
-    this._passwordInput = document.querySelector("#input-password");
-    this._buttonScreenGreeter = document.querySelector(
-      "#button-greeter-screen"
-    );
-    this._arrowIndicatorGreeter = document.querySelector("#screen-greeter");
-    this._screenGreeterVisible = true;
-    this._buttonGreeterClickEvent();
-    this._arrowIndicatorClickEvent();
-  }
+	constructor() {
+		this._screenGreeter = document.querySelector('#screen-greeter');
+		this._passwordInput = document.querySelector('#input-password');
+		this._buttonScreenGreeter = document.querySelector('#button-greeter-screen');
+		this._arrowIndicatorGreeter = document.querySelector('#arrow-indicator-greeter');
+		this._screenGreeterVisible = true;
+		this._buttonGreeterClickEvent();
+		this._arrowIndicatorClickEvent();
+	}
 
-  _buttonGreeterClickEvent() {
-    this._buttonScreenGreeter.addEventListener("click", () => {
-      this._showGreeter();
-    });
-  }
+	getGreeterVisibility() {
+		return this._screenGreeterVisible;
+	}
 
-  _arrowIndicatorClickEvent() {
-    this._arrowIndicatorGreeter.addEventListener("click", () => {
-      this._hideGreeter();
-    });
-    document.body.addEventListener("keyup", (e) => {
-      if (e.keyCode == 13) {
-        this._hideGreeter();
-      }
-    });
-  }
+	_buttonGreeterClickEvent() {
+		this._buttonScreenGreeter.addEventListener(
+			'click',
+			() => {
+				this._showGreeter();
+			}
+		);
+	}
 
-  _showGreeter() {
-    userProfile.rotateProfilePicture();
-    this._screenGreeter.classList.remove("screen-greeter-hide");
-    this._passwordInput.blur();
-    this._screenGreeterVisible = true;
-  }
+	_arrowIndicatorClickEvent() {
+		this._arrowIndicatorGreeter.addEventListener(
+			'click',
+			() => {
+				this._hideGreeter();
+			}
+		);
+	}
 
-  _hideGreeter() {
-    userProfile.rotateProfilePicture();
-    this._screenGreeter.classList.add("screen-greeter-hide");
-    this._passwordInput.focus();
-    this._screenGreeterVisible = false;
-  }
+	_showGreeter() {
+		userProfile.rotateProfilePicture();
+		this._screenGreeter.classList.remove('screen-greeter-hide');
+		this._passwordInput.blur();
+		this._screenGreeterVisible = true;
+	}
 
-  toggleGreeter() {
-    if (!this._screenGreeterVisible) {
-      this._showGreeter();
-    } else {
-      this._hideGreeter();
-    }
-  }
+	_hideGreeter() {
+		userProfile.rotateProfilePicture();
+		this._screenGreeter.classList.add('screen-greeter-hide');
+		this._passwordInput.focus();
+		this._screenGreeterVisible = false;
+	}
+
+	toggleGreeter() {
+		if (!this._screenGreeterVisible) {
+			this._showGreeter();
+		} else {
+			this._hideGreeter();
+		}
+	}
 }

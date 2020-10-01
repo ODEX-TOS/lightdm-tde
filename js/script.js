@@ -1,11 +1,14 @@
 // Instantiate debug mode
-const debugMode = new DebugMode();
+const debug = new Debug();
 
 // Instantiate image profile
 const userProfile = new UserProfile();
 
 // Instantiate greeter screen
 const greeterScreen = new GreeterScreen();
+
+// Instantiate dark screen
+const loginFade = new LoginFade();
 
 // Instantiate goodbye screen
 const goodbye = new Goodbye();
