@@ -74,7 +74,7 @@ class DateTime {
 		let year = date.getFullYear();
 
 		for(let i = 0; i < special_times.length; i++){
-			if (special_times[i].day == day && special_times[i].month == (month-1)){
+			if (special_times[i].day == day && special_times[i].month == (month+1)){
 				console.log("It is a special day today: " + special_times[i].message);
 				return special_times[i].message;
 			}
