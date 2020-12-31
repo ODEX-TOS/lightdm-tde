@@ -2,7 +2,7 @@
 
 pkgname=tde-greeter
 pkgver=1.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="a sleek, modern and lightdm theme for TDE"
 arch=('any')
 url="https://github.com/ODEX-TOS/lightdm-tde"

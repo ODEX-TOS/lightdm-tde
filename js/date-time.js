@@ -52,6 +52,38 @@ class DateTime {
 		}
 	}
 
+	_get_date(date){
+		// TODO: there are more special days that we could fill in here
+		// If someone want to create a PR, please don't add dates related to religion/ethical moments
+		// As that can make some people offended
+		// Keep it strictly to important people related to TOS and events that are important to humanity as a whole :)
+		let special_times = [
+			{day: 1, month: 1, message: "Happy New Year 🎉 🎉 🎉"},
+			{day: 4, month:2, message: "Happy birthday Ken Thompson 🎂🎂 (UNIX author)"},
+			{day: 11, month:3, message: "Happy birthday Arch Linux 🎂🎂"},
+			{day: 16, month:3, message: "Happy birthday Richart Matthew Stallman 🎂🎂 (GNU author)"},
+			{day: 21, month:6, message: "Happy birthday TOS 🥰"},
+			{day: 17, month:9, message: "Happy birthday Linux 🥰"},
+			{day: 28, month:12, message: "Happy birthday Linus Torvalds 🎂🎂 (Linux author)"},
+			{day: 28, month:12, message: "Happy birthday Tom Meyers 🎂🎂 (TOS author)"},
+			{day: 31, month: 12, message: "Happy New Year's Eve 🍾"},
+		]
+
+		let day = date.getDate();
+		let month = date.getMonth();
+		let year = date.getFullYear();
+
+		for(let i = 0; i < special_times.length; i++){
+			if (special_times[i].day == day && special_times[i].month == (month-1)){
+				console.log("It is a special day today: " + special_times[i].message);
+				return special_times[i].message;
+			}
+		}
+
+		return `${this._getDayOrdinal(this._appendZero(day))} of ` +
+		`${this._monthsArr[month]}, ${this._daysArr[date.getDay()]} - ${year}`;
+	}
+
 	_setTime() {
 		const date = new Date();
 		let hour = date.getHours();
@@ -80,10 +112,9 @@ class DateTime {
 			this._sidebarClock.innerText = `${hour}:${min} ${midDay}`;
 			this._greeterClock.innerText = `${hour}:${min} ${midDay}`;
 		}
-		this._sidebarDate.innerText = `${this._daysArr[date.getDay()]}, ${this._monthsArr[date.getMonth()]} ` +
-			`${this._appendZero(date.getDate())}, ${date.getFullYear()}`;
-		this._greeterDate.innerText = `${this._getDayOrdinal(this._appendZero(date.getDate()))} of ` +
-			`${this._monthsArr[date.getMonth()]}, ${this._daysArr[date.getDay()]}`;
+		let _date_str = this._get_date(date)
+		this._sidebarDate.innerText = _date_str;
+		this._greeterDate.innerText = _date_str;
 		this._greeterMessage.innerText = `Good ${greeterSuffix}!`;
 	}
 

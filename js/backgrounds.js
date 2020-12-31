@@ -36,7 +36,7 @@ class Backgrounds {
 		recursion = 0;
 		// Check image files/dir, and push it to its respective array 
 		for (let file of dirlist) {
-			if (file.match(/(png|PNG)|(jpg|JPEG)|(bmp|BMP)/) ) {
+			if (file.match(/(png|PNG)|(jpg|JPEG)|(bmp|BMP)/) && (!file.match(/TOS_logo\.(png|svg)/))) {
 				images.push(file);
 			} else if (!file.match(/\w+\.\w+/)) {
 				subdirs.push(file);
