@@ -64,8 +64,8 @@ class DateTime {
 			{day: 16, month:3, message: "Happy birthday Richart Matthew Stallman 🎂🎂 (GNU author)"},
 			{day: 21, month:6, message: "Happy birthday TOS 🥰"},
 			{day: 17, month:9, message: "Happy birthday Linux 🥰"},
+			{day: 11, month:12, message: "Happy birthday Tom Meyers 🎂🎂 (TOS author)"},
 			{day: 28, month:12, message: "Happy birthday Linus Torvalds 🎂🎂 (Linux author)"},
-			{day: 28, month:12, message: "Happy birthday Tom Meyers 🎂🎂 (TOS author)"},
 			{day: 31, month: 12, message: "Happy New Year's Eve 🍾"},
 		]
 
