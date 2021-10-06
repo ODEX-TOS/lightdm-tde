@@ -21,8 +21,8 @@ class Accounts {
 	}
 
 	_setUserImageProfile(path, fallback) {
-		this._imageProfile.src = path + "/.face";
-		this._imageUserProfile.src = path + "/.face";
+		this._imageProfile.src = path;
+		this._imageUserProfile.src = path;
 		this._imageProfile.onerror = function(e) {
 			console.log("Failed to load ")
 			console.log(e)
@@ -66,7 +66,7 @@ class Accounts {
 				this._inputPassword.value = '';
 				authenticate.startAuthentication();
 				this._updateAccountDefault(userObject.button);
-				this._setUserImageProfile(userObject.home_directory, userObject.profileImageFallBack);
+				this._setUserImageProfile(userObject.profileImage, userObject.profileImageFallBack);
 				this._setUserNameLabel(userObject.displayName);
 				userProfile.rotateProfilePicture();
 			}
@@ -94,7 +94,7 @@ class Accounts {
 			defaultAccountItem = document.querySelector(`#button-accounts-item-${this._usersObject[parseInt(0, 10)].username}`);
 			this._setAccountDefaultOnStartUpFallback();
 		}
-		this._setUserImageProfile(this._usersObject[0].home_directory, this._defaultUserProfileImageFallback);
+		this._setUserImageProfile(this._usersObject[0].image, this._defaultUserProfileImageFallback);
 		this._setUserNameLabel(this._defaultUserDisplayName);
 		this._updateAccountDefault(defaultAccountItem);
 	}
@@ -124,7 +124,7 @@ class Accounts {
 			let userItemButton = userObject.button;
 			let userName = userObject.userName;
 			let userDisplayName = userObject.displayName;
-			let userProfileImage = userObject.home_directory + '/.face';
+			let userProfileImage = userObject.image;
 			let userProfileImageFallBack = userObject.profileImageFallBack;
 			userItemButton.className = 'button-sidebar-list-item';
 			userItemButton.id = `button-accounts-item-${userName}`;
