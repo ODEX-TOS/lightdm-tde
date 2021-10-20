@@ -1,6 +1,7 @@
 class Authenticate {
 	constructor() {
 		this._passwordBox = document.querySelector('#input-password-box');
+		this._passwordVisibility = document.querySelector('#input-password-visibility');
 		this._passwordInput = document.querySelector('#input-password');
 		this._buttonAuthenticate = document.querySelector('#button-authenticate');
 		this._passwordInputContainer = document.querySelector('#input-password-container');
@@ -140,11 +141,27 @@ class Authenticate {
 		);
 	}
 
+	_passwordVisClickEvent() {
+		this._passwordVisibility.addEventListener(
+			'click',
+			e => {
+				if (this._passwordInput.type === "password") {
+					this._passwordInput.type = "text";
+					this._passwordVisibility.src = "assets/visibility_off.svg"
+				} else {
+					this._passwordInput.type = "password";
+					this._passwordVisibility.src = "assets/visibility.svg"
+				}
+			}
+		);
+	}
+
 	_init() {
 		this._autologinTimerExpired();
 		this._authenticationComplete();
 		this._buttonAuthenticateClickEvent();
 		this._passwordInputKeyDownEvent();
+		this._passwordVisClickEvent();
 		if (!lightdm) {
 			lightdm.onload = function() {
 				console.log('Start authentication');

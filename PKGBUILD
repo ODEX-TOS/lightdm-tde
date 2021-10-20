@@ -1,8 +1,8 @@
 # Maintainer: Gerome Matilla <gerome.matilla07@gmail.com | gmail>
 
 pkgname=tde-greeter
-pkgver=1.2.1
-pkgrel=2
+pkgver=1.2.2
+pkgrel=1
 pkgdesc="a sleek, modern and lightdm theme for TDE"
 arch=('any')
 url="https://github.com/ODEX-TOS/lightdm-tde"
