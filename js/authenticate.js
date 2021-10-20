@@ -62,7 +62,7 @@ class Authenticate {
 		this._passwordInput.blur();
 		
 		// Success messages
-		this._passwordBox.classList.add('authentication-success');
+		this._passwordInput.classList.add('authentication-success');
 		this._tooltipPassword.innerText = this._returnRandomSuccessfulMessages();
 		this._tooltipPassword.classList.add('tooltip-success');
 
@@ -99,7 +99,7 @@ class Authenticate {
 		this._passwordInput.value = '';
 
 		// Error messages/UI
-		this._passwordBox.classList.add('authentication-failed');
+		this._passwordInput.classList.add('authentication-failed');
 		this._tooltipPassword.innerText = this._returnRandomErrorMessages();
 		this._tooltipPassword.classList.add('tooltip-error');
 
